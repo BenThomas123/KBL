@@ -573,8 +573,8 @@ class Season:
                     toBeat = total
                     x = i
                     y = j
-        self.teams[x].roster[y].bt += 1
         self.bt = self.teams[x].roster[y]
+        self.teams[x].roster[y].bt += 1
         self.teams[x].roster[y].lst_bt.append(read_season_number())
         return self.bt
 
