@@ -27,6 +27,9 @@ def read_individual_awards():
     for player in range(len(league_list)):
         league_list[player].read_awards()
 
+def write_season_number(number):
+    with open("season number.txt", "w") as contents:
+        contents.write(str(number))
 
 # classes for the programs
 
@@ -305,9 +308,6 @@ class Team:
 
 
 # season class
-def write_season_number(number):
-    with open("season number.txt", "w") as contents:
-        contents.write(str(number))
 
 
 class Season:
@@ -333,7 +333,7 @@ class Season:
         self.record_holders_cup = record_holders_cup
 
     def handle_awards(self):
-        print("your record holders cup champion is: " + Season1.determine_record_holders_cup().name)
+        print("your record holders cup champion is: " + self.determine_record_holders_cup().name)
         print("your MVP is: ", self.determine_mvp().name)
         print("your DPOY is: ", self.determine_dpoy().name)
         print("your OPOY is: ", self.determine_opoy().name)
